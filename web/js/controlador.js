@@ -25,8 +25,13 @@ angularRoutingApp.config(function($routeProvider) {
 
 angularRoutingApp.controller('mainController', function($scope,$http) {
     $scope.valor=1;
+    
+    
+    
+    
 	   $http({
   method: 'GET',
+  params: {codciudad:'10200'},
   cache: true,
   headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
   url: '/backendtiempo/webresources/servicios/climaciudad'
