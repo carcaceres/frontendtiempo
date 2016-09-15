@@ -8,30 +8,20 @@ angularRoutingApp.config(function ($routeProvider) {
                 templateUrl: 'view/home.html',
                 controller: 'mainController'
             })
-            .when('/admin/acerca', {
-                templateUrl: 'view/acerca.html',
-                controller: 'aboutController'
-            })
-            .when('/admin/contacto', {
-                templateUrl: 'view/contacto.html',
-                controller: 'contactController'
-            })
-
             .otherwise({
                 redirectTo: '/'
             });
 });
 
-
+// controlador angular js
 angularRoutingApp.controller('mainController', function ($scope, $http) {
     $scope.valor = 1;
-
-
-
-
+ 
+// servicio para obtener datos de servidor backend del clima de cartagena
     $http({
+        
         method: 'GET',
-        params: {codciudad: '10200'},
+        params: {codciudad: '10201'},
         cache: true,
         headers: {'Content-Type': 'application/x-www-form-urlencoded'},
         url: '/backendtiempo/webresources/servicios/climaciudad'
@@ -52,10 +42,6 @@ angularRoutingApp.controller('mainController', function ($scope, $http) {
         $scope.gradost = "Farenheiht";
         $scope.datotemp = $scope.grados + "°C";
 
-
-
-
-
         if ($scope.datos.idestado == 1) {
             $scope.url = "./images/soleado.png";
             console.log("estado 1");
@@ -70,20 +56,43 @@ angularRoutingApp.controller('mainController', function ($scope, $http) {
             console.log("estado 4");
         }
 
+    }, function errorCallback(response) {
+        // called asynchronously if an error occurs
+        // or server returns response with an error status.
+        
+       alert("problemas en invocar json");
+    });
+    
+    //////////////////////////////////////////////////////////////////////
+    // servicio para obtener datos de servidor backend lista de ciudades 
+    
+    
+        $http({
+        method: 'GET',
+         cache: true,
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        url: '/backendtiempo/webresources/servicios/mostrardatosclimas'
 
+    }).then(function successCallback(response) {
 
-
-
-
+        $scope.dataciudad = response.data;
+        var variable=$scope.dataciudad;
+       console.log(variable[0]);
+     
 
     }, function errorCallback(response) {
         // called asynchronously if an error occurs
         // or server returns response with an error status.
     });
 
+    
+    
+    // funcione que busca desde el servicio web los datos del clima de la ciudad 
+       
+
 
     $scope.mostrarTemperaturaCiudad = function () {
-console.log("Mostrar Temperatura "+$scope.codigo);
+        $scope.valor = 1;
         $http({
             method: 'GET',
             params: {codciudad: $scope.codigo},
@@ -92,7 +101,7 @@ console.log("Mostrar Temperatura "+$scope.codigo);
             url: '/backendtiempo/webresources/servicios/climaciudad'
 
         }).then(function successCallback(response) {
-
+           
             $scope.data = response.data;
             var array = $scope.data;
             $scope.datos = array[0];
@@ -125,32 +134,19 @@ console.log("Mostrar Temperatura "+$scope.codigo);
                 console.log("estado 4");
             }
 
-
-
-
-
-
-
         }, function errorCallback(response) {
             // called asynchronously if an error occurs
             // or server returns response with an error status.
+         
         });
-
-
-
-
-
-
 
     }
 
 
 
 
-
-
-
-
+// funcione cambiar la vista celsius a farenheit y viceversa
+    
     $scope.verTemperatura = function () {
         if ($scope.valor == 0) {
             $scope.valor = 1;
@@ -164,6 +160,8 @@ console.log("Mostrar Temperatura "+$scope.codigo);
 
         console.log($scope.valor);
     }
+
+// funcion que devuelve el dia de la semana
 
     $scope.diaSemana = function () {
         var fecha = new Date();
@@ -183,13 +181,6 @@ console.log("Mostrar Temperatura "+$scope.codigo);
 
 });
 
-angularRoutingApp.controller('aboutController', function ($scope) {
-    $scope.message = 'Esta es la página "Acerca de"';
-});
-
-angularRoutingApp.controller('contactController', function ($scope) {
-    $scope.message = 'Esta es la página de "Contacto", aquí podemos poner un formulario';
-});
 
 
 

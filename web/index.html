@@ -1,6 +1,7 @@
 <!-- index.html -->
 <!DOCTYPE html>
 <head>
+    <!--librerias necesarias para el proyecto-->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -11,62 +12,14 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.3/angular-route.js"></script>
   <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.css">
   <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
-  <link rel="stylesheet" href=" ">
+  <link rel="stylesheet" href="css/style.css">
   
-   
+   <!--importa el controlador angularjs-->
    
     <script src="js/controlador.js"></script>
 
 
-    <style>
-        
-       
-        header{
-            background-color: #1a237e;
-            color:white;
-            width: 100%;
-            margin-top: -10px; 
-            height: 100px;
-           
-        }
-
-        .ng-scope{
-              height: 100%;
-              width: 100%; 
-               padding-top: 5px; 
-           
-        }
-        .ng-scope h1{
-            padding-left: 10px; 
-            padding-top: 40px;
-             color:white;
-             
-        }
-        
-        .ng-scope #contenedor{
-            color:grey;
-           margin-top: 8%; 
-            padding-left: 40px;
-             margin-left:17%;
-            margin-right: 5%; 
-             padding-top: 30px;
-             -webkit-box-shadow: 2px 2px 2px 2px #D4D4D4;
-box-shadow: 2px 2px 2px 2px #D4D4D4; 
- height: 100%;
-
-
-        }
-        #contenedor #cont1{
-             float: left;
-              width: 50%;
-        }
-        #contenedor #cont2{
-             float: left;
-               width: 50%;
-        }
-        
-
-    </style>
+    
 
 </head>
 
@@ -80,7 +33,7 @@ box-shadow: 2px 2px 2px 2px #D4D4D4;
 
         <div id="main" ng-controller='mainController'>
             <!-- Aquí inyectamos las vistas -->
-            <div ng-view></div>
+            <div ng-view ng-show="!mostrar"></div>
         </div>
     </body>
 </html>
