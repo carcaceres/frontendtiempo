@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <link rel="icon" type="image/png" href="../png/favico.png" />
+        <link rel="icon" type="image/png" href="../assets/png/favico.png" />
         <title>.::Canal del Clima</title>
     </head>
 
@@ -11,28 +11,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>   
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/controladoradmin.js"></script>
-    <link rel="stylesheet" href="../css/style.css">
-    <style>
-
-        .contenedor{
-            margin-left: 43%;
-           
-        }
-
-
-    </style>
+    <script type="text/javascript" src="../assets/js/controladoradmin.js"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+ 
 
     <body>
         <header>
-            <img src="../images/logos.png" alt="logo" width="170" height="100" />
+            <img src="../assets/images/logos.png" alt="logo" width="170" height="100" />
 
         </header>
-    <center> <h2>Ingresar Ciudad</h2></center>
+    <center> <h2 class="tituloh2">Ingresar Ciudad</h2></center>
 
     <form ng-app="App" ng-controller="controlador"
           name="myForm" novalidate>
-        <div class="contenedor"> 
+        <div class="contenedorform"> 
                 <p>Codigo Ciudad:<br>
                     <input type="text" name="cciudad" ng-model="cciudad" required>
                     <span style="color:red" ng-show="myForm.cciudad.$dirty && myForm.cciudad.$invalid">
@@ -80,11 +72,13 @@
                     </span>
                 </p>
 
-                <p>
+                
+                   
                     <br/>
-                    <br/>
-
-                    <input type="submit" ng-click="nuevaCiudad()"
+   </div>
+        <p>
+        <center>
+                    <input  type="submit" ng-click="nuevaCiudad()"
                        ng-disabled="myForm.$invalid && myForm.$dirty"
                        ng-click="nuevaCiudad(myForm)" class="btn btn-primary">
                     
@@ -96,7 +90,21 @@
 
                 </p>
             
-        </div>
+        </center>
+         
+        <br/>
+        <center>
+             <a href="/frontendtiempo/#/">
+                <span class="glyphicon glyphicon-eye-open" style="font-size:20px;"></span>
+            </a>
+            <a href="/frontendtiempo/admin/mostrarclimaciudad.html#">
+                <span class=" glyphicon glyphicon-search" style="font-size:20px;"></span>
+            </a>
+            </center>
+        
+        <br/>
+         
+         
     </form>
 
 

@@ -3,7 +3,7 @@
 <head>
     <!--librerias necesarias para el proyecto-->
     <title>.::Canal del Clima</title>
-      <link rel="icon" type="image/png" href="png/favico.png" />
+      <link rel="icon" type="image/png" href="assets/png/favico.png" />
  
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
@@ -15,11 +15,11 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.3/angular-route.js"></script>
   <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.css">
   <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
     
    <!--importa el controlador angularjs-->
    
-    <script src="js/controladorvista.js"></script>
+    <script src="assets/js/controladorvista.js"></script>
 
 
     
@@ -30,13 +30,13 @@
 
     <body  id="cuerpo">
         <header>
-            <img src="./images/logos.png" alt="logo" width="170" height="100" />
+            <img src="./assets/images/logos.png" alt="logo" width="170" height="100" />
          
         </header>
 
         <div id="main" ng-controller='mainController'>
             <!-- Aquí inyectamos las vistas -->
-            <div ng-view ng-show="!mostrar"></div>
+            <div ng-view ></div>
         </div>
     </body>
 </html>

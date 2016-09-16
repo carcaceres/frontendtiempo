@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="icon" type="image/png" href="../assets/png/favico.png" />
+        <title>.::Canal del Clima</title>
+    </head>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../assets/js/controladoradmin.js"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+
+        .centro{
+            text-align: center;
+        }
+
+        #tabla{
+            width: 70%;
+        }
+
+    </style>
+
+    <body>
+        <header>
+            <img src="../assets/images/logos.png" alt="logo" width="170" height="100" />
+
+        </header>
+
+        <div ng-app="App" ng-controller="controlador">
+
+            <center> <h2 class="tituloh2">Mostrar Clima Ciudad</h2></center>
+            <center>
+                <table id="tabla" class="table table-striped" 
+                       ng-init="mostrarClimaCiudad()" show-filter="true">
+
+
+                    <tr class="centro">
+                        <td style=" width: inherit;">Codigo Ciudad</td>
+                        <td style=" width: inherit;">ciudad</td>
+                        <td style=" width: inherit;">pronostico</td>
+                        <td style=" width: inherit;">Datos</td>              
+
+                    </tr>
+
+                    <tr ng-repeat="clima in dataclima" >
+                        <td>{{clima.codCiudad}}</td>
+                        <td>{{clima.nomCiudad}}</td>
+                        <td>{{clima.nomestado}}</td>
+                        <td>
+                            <div style="float:left; " ng-click="myFunc()">
+                                Celsus: {{clima.celsius}}°C 
+                                &nbsp
+                            </div>
+                            <div style="float:left" ng-show="showMe">
+                                <div style="float:left">
+                                    &nbspFarenheit:{{clima.farenheit}}°F
+                                    &nbspHumedad: {{clima.humedad}}%
+                                    &nbspViento: {{clima.viento}}Km/h
+                                </div>
+                                <div ng-if="clima.idestado == 1" style="float:left">
+                                    <img src="../assets/images/soleado.png" alt="soleado"
+                                         width="100" height="100"/>
+
+                                </div >
+                                <div ng-if="clima.idestado == 2" style="float:left">
+                                    <img src="../assets/images/parcialnub.png" alt="parcialmente nublado"
+                                         width="100" height="100"/>
+
+                                </div >
+
+                                <div ng-if="clima.idestado == 3" style="float:left">
+                                    <img src="../assets/images/nublado.png" alt="nublado"
+                                         width="100" height="100"/>
+                                </div>
+                                <div ng-if="clima.idestado == 4" style="float:left">
+                                    <img src="../assets/images/tormelect.png" alt="tormelect"
+                                         width="100" height="100"/>
+                                </div >
+                            </div></td>
+
+                    </tr>
+                </table>
+            </center>
+
+            <br/>
+            <br/>
+            <br/>
+            <center>
+             <a href="/frontendtiempo/#/">
+                <span class="glyphicon glyphicon-eye-open" style="font-size:20px;"></span>
+            </a>
+            <a href="/frontendtiempo/admin/insertar.html">
+                <span class=" glyphicon glyphicon-floppy-disk" style="font-size:20px;"></span>
+            </a>
+            </center>
+        </div>
+
+    </body>
+</html>

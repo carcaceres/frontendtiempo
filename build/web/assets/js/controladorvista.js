@@ -43,16 +43,16 @@ angularRoutingApp.controller('mainController', function ($scope, $http) {
         $scope.datotemp = $scope.grados + "°C";
 
         if ($scope.datos.idestado == 1) {
-            $scope.url = "./images/soleado.png";
+            $scope.url = "./assets/images/soleado.png";
             console.log("estado 1");
         } else if ($scope.datos.idestado == 2) {
-            $scope.url = "./images/parcialnub.png";
+            $scope.url = "./assets/images/parcialnub.png";
             console.log("estado 2");
         } else if ($scope.datos.idestado == 3) {
-            $scope.url = "./images/nublado.png";
+            $scope.url = "./assets/images/nublado.png";
             console.log("estado 3");
         } else if ($scope.datos.idestado == 4) {
-            $scope.url = "./images/tormelect.png";
+            $scope.url = "./assets/images/tormelect.png";
             console.log("estado 4");
         }
 
@@ -121,16 +121,16 @@ angularRoutingApp.controller('mainController', function ($scope, $http) {
 
 
             if ($scope.datos.idestado == 1) {
-                $scope.url = "./images/soleado.png";
+                $scope.url = "./assets/images/soleado.png";
                 console.log("estado 1");
             } else if ($scope.datos.idestado == 2) {
-                $scope.url = "./images/parcialnub.png";
+                $scope.url = "./assets/images/parcialnub.png";
                 console.log("estado 2");
             } else if ($scope.datos.idestado == 3) {
-                $scope.url = "./images/nublado.png";
+                $scope.url = "./assets/images/nublado.png";
                 console.log("estado 3");
             } else if ($scope.datos.idestado == 4) {
-                $scope.url = "./images/tormelect.png";
+                $scope.url = "./assets/images/tormelect.png";
                 console.log("estado 4");
             }
 
