@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="icon" type="image/png" href="../png/favico.png" />
+        <title>.::Canal del Clima</title>
+    </head>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/controladoradmin.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+
+        .contenedor{
+            margin-left: 43%;
+           
+        }
+
+
+    </style>
+
+    <body>
+        <header>
+            <img src="../images/logos.png" alt="logo" width="170" height="100" />
+
+        </header>
+    <center> <h2>Ingresar Ciudad</h2></center>
+
+    <form ng-app="App" ng-controller="controlador"
+          name="myForm" novalidate>
+        <div class="contenedor"> 
+                <p>Codigo Ciudad:<br>
+                    <input type="text" name="cciudad" ng-model="cciudad" required>
+                    <span style="color:red" ng-show="myForm.cciudad.$dirty && myForm.cciudad.$invalid">
+                        <span ng-show="myForm.cciudad.$error.required">Campo Requerido.</span>
+                    </span>
+                </p>
+
+                <p>Nombre Ciudad:<br>
+                    <input type="text" name="nciudad" ng-model="nciudad" required>
+                    <span style="color:red" ng-show="myForm.nciudad.$dirty && myForm.nciudad.$invalid">
+                        <span ng-show="myForm.nciudad.$error.required">Campo Requerido.</span>
+                    </span>
+                </p>
+
+                <p>Estado:<br>
+                    <select ng-model="estado" style=" width: 170px; 
+                            height: 28px;">
+                        <option value="{{datoe.idestado}}"  ng-repeat="datoe in dataestado">{{datoe.nomestado}}</option>
+                    </select>
+
+                <p>Celsius °C:<br>
+                    <input type="number" name="celsius" ng-model="celsius" required>
+                    <span style="color:red" ng-show="myForm.celsius.$dirty && myForm.celsius.$invalid">
+                        <span ng-show="myForm.celsius.$error.required">Campo Requerido.</span>
+                    </span>
+                </p>
+
+                <p>Probabilidad de Precipitación %:<br>
+                    <input type="number" name="probprec" ng-model="probprec" required>
+                    <span style="color:red" ng-show="myForm.probprec.$dirty && myForm.probprec.$invalid">
+                        <span ng-show="myForm.probprec.$error.required">Campo Requerido.</span>
+                    </span>
+                </p>
+
+                <p>Humedad %:<br>
+                    <input type="number" name="humedad" ng-model="humedad" required>
+                    <span style="color:red" ng-show="myForm.humedad.$dirty && myForm.humedad.$invalid">
+                        <span ng-show="myForm.humedad.$error.required">Campo Requerido.</span>
+                    </span>
+                </p>
+                <p>Viento Km/h:<br>
+                    <input type="number" name="viento" ng-model="viento" required>
+                    <span style="color:red" ng-show="myForm.viento.$dirty && myForm.viento.$invalid">
+                        <span ng-show="myForm.viento.$error.required">Campo Requerido.</span>
+                    </span>
+                </p>
+
+                <p>
+                    <br/>
+                    <br/>
+
+                    <input type="submit" ng-click="nuevaCiudad()"
+                       ng-disabled="myForm.$invalid && myForm.$dirty"
+                       ng-click="nuevaCiudad(myForm)" class="btn btn-primary">
+                    
+                    
+                    
+                    <input  type="reset" ng-click="reset(myForm)" 
+                            class="btn btn-warning" value="Limpiar" />
+
+
+                </p>
+            
+        </div>
+    </form>
+
+
+
+</body>
+</html>

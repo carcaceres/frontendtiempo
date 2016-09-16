@@ -1,0 +1,33 @@
+<div class="jumbotron text-center">
+    <h1>Nueva Ciudad</h1>
+    <form>
+        <div class="row">
+            <div class="row">
+        <p class="col-md-2">Codigo Ciudad</p>
+        <input type="text" class="col-md-6" ng-model="codigociudad" required>
+         <span class="col-sm-2"  ng-show="userForm.codigociudad.$touched">
+                                <span class="messages" ng-show="userForm.codigociudad.$error.required">El campo es obligatorio.</span>
+                            </span>
+        </div>
+        <div class="row">
+        <p class="col-md-2">Nombre Ciudad</p>
+        <input type="text" class="col-md-6" ng-model="nombreciudad" required>
+        <span class="col-sm-2"  ng-show="userForm.nombreciudad.$touched">
+                                <span class="messages" ng-show="userForm.nombreciudad.$error.required">El campo es obligatorio.</span>
+                            </span>
+       
+        </div>
+        <br/>
+        <br/>
+        <input class="btn btn-primary" ng-disabled="userForm.$invalid"  type="submit"  value="Guardar"
+               ng-click="nuevaCiudad()" />
+
+        <input class="btn btn-primary" type="reset" value="Limpiar" />
+        </div>
+
+
+
+
+
+    </form>
+</div>
