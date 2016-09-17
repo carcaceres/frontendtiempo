@@ -6,14 +6,23 @@
         <title>.::Canal del Clima</title>
     </head>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>   
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script type="text/javascript" src="../assets/js/controladoradmin.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="../assets/librerias/angular.min.js"></script>
+    <script src="../assets/librerias/jquery.min.js"></script>
+    <script src="../assets/librerias/angular-route.js"></script>
+    <link rel="stylesheet" href="../assets/librerias/normalize.css">
+    <link rel="stylesheet" href="../assets/librerias/bootstrap.css">
+    <link rel="stylesheet" href="../assets/librerias/bootstrap.min.css">  
+    <script src="../assets/librerias/bootstrap.min.js"></script>   
+    <script src="../assets/librerias/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css "> 
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <script type="text/javascript" src="../assets/js/controladorinsertar.js"></script>
     <link rel="stylesheet" href="../assets/css/style.css">
- 
+
 
     <body>
         <header>
@@ -22,89 +31,89 @@
         </header>
     <center> <h2 class="tituloh2">Ingresar Ciudad</h2></center>
 
-    <form ng-app="App" ng-controller="controlador"
+    <form ng-app="AppInsertar" ng-controller="controladorinsertar"
           name="myForm" novalidate>
         <div class="contenedorform"> 
-                <p>Codigo Ciudad:<br>
-                    <input type="text" name="cciudad" ng-model="cciudad" required>
-                    <span style="color:red" ng-show="myForm.cciudad.$dirty && myForm.cciudad.$invalid">
-                        <span ng-show="myForm.cciudad.$error.required">Campo Requerido.</span>
-                    </span>
-                </p>
+            <p>Codigo Ciudad:<br>
+                <input type="text" name="cciudad" ng-model="cciudad" required>
+                <span style="color:red" ng-show="myForm.cciudad.$dirty && myForm.cciudad.$invalid">
+                    <span ng-show="myForm.cciudad.$error.required">Campo Requerido.</span>
+                </span>
+            </p>
 
-                <p>Nombre Ciudad:<br>
-                    <input type="text" name="nciudad" ng-model="nciudad" required>
-                    <span style="color:red" ng-show="myForm.nciudad.$dirty && myForm.nciudad.$invalid">
-                        <span ng-show="myForm.nciudad.$error.required">Campo Requerido.</span>
-                    </span>
-                </p>
+            <p>Nombre Ciudad:<br>
+                <input type="text" name="nciudad" ng-model="nciudad" required>
+                <span style="color:red" ng-show="myForm.nciudad.$dirty && myForm.nciudad.$invalid">
+                    <span ng-show="myForm.nciudad.$error.required">Campo Requerido.</span>
+                </span>
+            </p>
 
-                <p>Estado:<br>
-                    <select ng-model="estado" style=" width: 170px; 
-                            height: 28px;">
-                        <option value="{{datoe.idestado}}"  ng-repeat="datoe in dataestado">{{datoe.nomestado}}</option>
-                    </select>
+            <p>Estado:<br>
+                <select ng-model="estado" style=" width: 170px; 
+                        height: 28px;">
+                    <option value="{{datoe.idestado}}"  ng-repeat="datoe in dataestado">{{datoe.nomestado}}</option>
+                </select>
 
-                <p>Celsius °C:<br>
-                    <input type="number" name="celsius" ng-model="celsius" required>
-                    <span style="color:red" ng-show="myForm.celsius.$dirty && myForm.celsius.$invalid">
-                        <span ng-show="myForm.celsius.$error.required">Campo Requerido.</span>
-                    </span>
-                </p>
+            <p>Celsius °C:<br>
+                <input type="number" name="celsius" ng-model="celsius" required>
+                <span style="color:red" ng-show="myForm.celsius.$dirty && myForm.celsius.$invalid">
+                    <span ng-show="myForm.celsius.$error.required">Campo Requerido.</span>
+                </span>
+            </p>
 
-                <p>Probabilidad de Precipitación %:<br>
-                    <input type="number" name="probprec" ng-model="probprec" required>
-                    <span style="color:red" ng-show="myForm.probprec.$dirty && myForm.probprec.$invalid">
-                        <span ng-show="myForm.probprec.$error.required">Campo Requerido.</span>
-                    </span>
-                </p>
+            <p>Probabilidad de Precipitación %:<br>
+                <input type="number" name="probprec" ng-model="probprec" required>
+                <span style="color:red" ng-show="myForm.probprec.$dirty && myForm.probprec.$invalid">
+                    <span ng-show="myForm.probprec.$error.required">Campo Requerido.</span>
+                </span>
+            </p>
 
-                <p>Humedad %:<br>
-                    <input type="number" name="humedad" ng-model="humedad" required>
-                    <span style="color:red" ng-show="myForm.humedad.$dirty && myForm.humedad.$invalid">
-                        <span ng-show="myForm.humedad.$error.required">Campo Requerido.</span>
-                    </span>
-                </p>
-                <p>Viento Km/h:<br>
-                    <input type="number" name="viento" ng-model="viento" required>
-                    <span style="color:red" ng-show="myForm.viento.$dirty && myForm.viento.$invalid">
-                        <span ng-show="myForm.viento.$error.required">Campo Requerido.</span>
-                    </span>
-                </p>
+            <p>Humedad %:<br>
+                <input type="number" name="humedad" ng-model="humedad" required>
+                <span style="color:red" ng-show="myForm.humedad.$dirty && myForm.humedad.$invalid">
+                    <span ng-show="myForm.humedad.$error.required">Campo Requerido.</span>
+                </span>
+            </p>
+            <p>Viento Km/h:<br>
+                <input type="number" name="viento" ng-model="viento" required>
+                <span style="color:red" ng-show="myForm.viento.$dirty && myForm.viento.$invalid">
+                    <span ng-show="myForm.viento.$error.required">Campo Requerido.</span>
+                </span>
+            </p>
 
-                
-                   
-                    <br/>
-   </div>
+
+
+            <br/>
+        </div>
         <p>
         <center>
-                    <input  type="submit" ng-click="nuevaCiudad()"
-                       ng-disabled="myForm.$invalid && myForm.$dirty"
-                       ng-click="nuevaCiudad(myForm)" class="btn btn-primary">
-                    
-                    
-                    
-                    <input  type="reset" ng-click="reset(myForm)" 
-                            class="btn btn-warning" value="Limpiar" />
+            <input  type="submit" ng-click="nuevaCiudad()"
+                    ng-disabled="myForm.$invalid && myForm.$dirty"
+                    ng-click="nuevaCiudad(myForm)" class="btn btn-primary">
 
 
-                </p>
-            
+
+            <input  type="reset" ng-click="reset(myForm)" 
+                    class="btn btn-warning" value="Limpiar" />
+
+
+            </p>
+
         </center>
-         
+
         <br/>
         <center>
-             <a href="/frontendtiempo/#/">
+            <a href="/frontendtiempo/#/">
                 <span class="glyphicon glyphicon-eye-open" style="font-size:20px;"></span>
             </a>
             <a href="/frontendtiempo/admin/mostrarclimaciudad.html#">
                 <span class=" glyphicon glyphicon-search" style="font-size:20px;"></span>
             </a>
-            </center>
-        
+        </center>
+
         <br/>
-         
-         
+
+
     </form>
 
 

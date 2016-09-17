@@ -6,15 +6,18 @@
         <title>.::Canal del Clima</title>
     </head>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>   
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../assets/js/controladoradmin.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="../assets/librerias/angular.min.js"></script>
+    <script src="../assets/librerias/jquery.min.js"></script>
+    <script src="../assets/librerias/angular-route.js"></script>
+    <link rel="stylesheet" href="../assets/librerias/normalize.css">
+    <link rel="stylesheet" href="../assets/librerias/bootstrap.css">
+    <link rel="stylesheet" href="../assets/librerias/bootstrap.min.css">  
+    <script src="../assets/librerias/bootstrap.min.js"></script>   
+    <script src="../assets/librerias/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css "> 
+    <link rel="stylesheet" href="assets/css/style.css"> 
+    <script type="text/javascript" src="../assets/js/controladormostrar.js"></script>
     <link rel="stylesheet" href="../assets/css/style.css">
     <style>
 
@@ -34,7 +37,7 @@
 
         </header>
 
-        <div ng-app="App" ng-controller="controlador">
+        <div ng-app="AppMostrar" ng-controller="controladormostrar">
 
             <center> <h2 class="tituloh2">Mostrar Clima Ciudad</h2></center>
             <center>
@@ -94,12 +97,12 @@
             <br/>
             <br/>
             <center>
-             <a href="/frontendtiempo/#/">
-                <span class="glyphicon glyphicon-eye-open" style="font-size:20px;"></span>
-            </a>
-            <a href="/frontendtiempo/admin/insertar.html">
-                <span class=" glyphicon glyphicon-floppy-disk" style="font-size:20px;"></span>
-            </a>
+                <a href="/frontendtiempo/#/">
+                    <span class="glyphicon glyphicon-eye-open" style="font-size:20px;"></span>
+                </a>
+                <a href="/frontendtiempo/admin/insertar.html">
+                    <span class=" glyphicon glyphicon-floppy-disk" style="font-size:20px;"></span>
+                </a>
             </center>
         </div>
 

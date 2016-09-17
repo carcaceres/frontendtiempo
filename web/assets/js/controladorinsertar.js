@@ -5,8 +5,8 @@
  */
 
 
-var app = angular.module('App', []);
-app.controller('controlador', function ($scope, $http) {
+var app = angular.module('AppInsertar', []);
+app.controller('controladorinsertar', function ($scope, $http) {
   
   $http({
         method: 'GET',
@@ -62,33 +62,6 @@ app.controller('controlador', function ($scope, $http) {
     }
     
 
-
-$scope.mostrarClimaCiudad = function () {
-
- $http({
-        method: 'GET',
-         cache: true,
-        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-        url: '/backendtiempo/webresources/servicios//mostrardatosclimas'
-
-    }).then(function successCallback(response) {
-
-        $scope.dataclima = response.data;
-        console.log($scope.dataclima);
-      
-    }, function errorCallback(response) {
-        // called asynchronously if an error occurs
-        // or server returns response with an error status.
-    }); 
-
-}
-
-
-
-$scope.showMe = false;
-    $scope.myFunc = function() {
-        $scope.showMe = !$scope.showMe;
-    }
 
 });
 
