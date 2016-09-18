@@ -27,7 +27,7 @@ angularRoutingApp.controller('mainController', function ($scope, $http) {
         url: '/backendtiempo/webresources/servicios/climaciudad'
 
     }).then(function successCallback(response) {
-
+        $scope.mostrar=false;
         $scope.data = response.data;
         var array = $scope.data;
         $scope.datos = array[0];
@@ -35,9 +35,9 @@ angularRoutingApp.controller('mainController', function ($scope, $http) {
         $scope.nomestado = $scope.datos.nomestado;
         $scope.grados = $scope.datos.celsius;
         $scope.farenheit = $scope.datos.farenheit;
-        $scope.probprec = $scope.datos.probprec;
-        $scope.humedad = $scope.datos.humedad;
-        $scope.viento = $scope.datos.viento;
+        $scope.probprec = $scope.datos.probprec.toString()+"%";
+        $scope.humedad = $scope.datos.humedad.toString()+"%"
+        $scope.viento = $scope.datos.viento.toString()+"Km/h";
         $scope.dia = $scope.diaSemana();
         $scope.gradost = "Farenheiht";
         $scope.datotemp = $scope.grados + "°C";
@@ -105,13 +105,34 @@ angularRoutingApp.controller('mainController', function ($scope, $http) {
             $scope.data = response.data;
             var array = $scope.data;
             $scope.datos = array[0];
+            var array1=array[0];
+            if(array1==undefined){
+                $scope.mostrar=true;
+                $scope.nomCiudad = "Sin Datos";
+             
+            $scope.nomestado = "Sin Datos";
+            $scope.grados = "Sin Datos";
+            $scope.farenheit = "Sin Datos";
+            $scope.probprec = "Sin Datos";
+            $scope.humedad = "Sin Datos";
+            $scope.viento = "Sin Datos";
+            $scope.dia = "Sin Datos";;
+            $scope.gradost = "Farenheiht";
+            $scope.datotemp = "Sin Datos";
+              $scope.url = "./assets/images/noimagen.png";
+              console.log("idestado 0")
+             
+            }
+            else{
+             $scope.mostrar=false;
             $scope.nomCiudad = $scope.datos.nomCiudad;
+             
             $scope.nomestado = $scope.datos.nomestado;
             $scope.grados = $scope.datos.celsius;
             $scope.farenheit = $scope.datos.farenheit;
-            $scope.probprec = $scope.datos.probprec;
-            $scope.humedad = $scope.datos.humedad;
-            $scope.viento = $scope.datos.viento;
+            $scope.probprec = $scope.datos.probprec.toString()+"%";
+            $scope.humedad = $scope.datos.humedad.toString()+"%";
+            $scope.viento = $scope.datos.viento.toString()+"Km/h";
             $scope.dia = $scope.diaSemana();
             $scope.gradost = "Farenheiht";
             $scope.datotemp = $scope.grados + "°C";
@@ -133,6 +154,7 @@ angularRoutingApp.controller('mainController', function ($scope, $http) {
                 $scope.url = "./assets/images/tormelect.png";
                 console.log("estado 4");
             }
+        }
 
         }, function errorCallback(response) {
             // called asynchronously if an error occurs
