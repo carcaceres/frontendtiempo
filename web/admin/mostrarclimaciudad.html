@@ -19,7 +19,12 @@
     <link rel="stylesheet" href="assets/css/style.css"> 
     <script type="text/javascript" src="../assets/js/controladormostrar.js"></script>
     <link rel="stylesheet" href="../assets/css/style.css">
-    <style>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"> 
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+
+    
+     <style>
 
         .centro{
             text-align: center;
@@ -30,6 +35,7 @@
         }
 
     </style>
+   
 
     <body>
         <header>
@@ -41,7 +47,7 @@
 
             <center> <h2 class="tituloh2">Mostrar Clima Ciudad</h2></center>
             <center>
-                <table id="tabla" class="table table-striped" 
+                <table id="example" class="display" cellspacing="0" width="100%"
                        ng-init="mostrarClimaCiudad()" show-filter="true">
 
 

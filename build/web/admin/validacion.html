@@ -12,6 +12,8 @@
 <form ng-app="myApp" ng-controller="validateCtrl"
 name="myForm" novalidate>
 
+    {{user}}
+    
 <p>Username:<br>
 <input type="text" name="user" ng-model="user" required>
 <span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
@@ -38,7 +40,7 @@ myForm.email.$dirty && myForm.email.$invalid">
 <script>
 var app = angular.module('myApp', []);
 app.controller('validateCtrl', function($scope) {
-    $scope.user = 'carlos';
+    $scope.user = 'carlos1';
     $scope.email = 'john.doe@gmail.com';
 });
 </script>
