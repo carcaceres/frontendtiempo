@@ -3,15 +3,17 @@
 <div class="row">
 
     <p class="col-md-1" style="float:left; margin-left: 20px;">
-        <strong>
-        Ciudad
-        </strong>
-    </p>
-    <select class="col-md-3" style="float: left;" ng-model="codigo" 
-            ng-click="mostrarTemperaturaCiudad()">
 
-        <option value="{{datoc.codCiudad}}"  ng-repeat="datoc in dataciudad">{{datoc.nomCiudad}}</option>
-    </select>
+    </p>
+    <form id="myForm">
+        <p>Codigo:<input type="text" name="codigo" ng-model="codigo" required>
+
+            <input  type="submit"ng-click="mostrarTemperaturaCiudad()" 
+                    class="btn btn-primary">
+        </p>
+
+    </form>
+
 </div>
 
 <!--div Datos del Clima de Ciudad-->
@@ -42,7 +44,7 @@
                     <p><strong>Viento: {{viento}}Km/h</strong></p>     
                 </div>
             </div>
-          
+
             <br/>
             <br/>
         </div>
@@ -53,15 +55,15 @@
 
 </div>
 
- <br/>
-    <center>
-       
-        <a href="/frontendtiempo/admin/insertar.html">
-            <span class=" glyphicon glyphicon-floppy-disk" style="font-size:20px;"></span>
-        </a>
-        <a href="/frontendtiempo/admin/mostrarclimaciudad.html#">
-            <span class=" glyphicon glyphicon-search" style="font-size:20px;"></span>
-        </a>
-    </center>
+<br/>
+<center>
 
-    <br/>
+    <a href="/frontendtiempo/admin/insertar.html">
+        <span class=" glyphicon glyphicon-floppy-disk" style="font-size:20px;"></span>
+    </a>
+    <a href="/frontendtiempo/admin/mostrarclimaciudad.html#">
+        <span class=" glyphicon glyphicon-search" style="font-size:20px;"></span>
+    </a>
+</center>
+
+<br/>
