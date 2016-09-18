@@ -93,6 +93,7 @@ angularRoutingApp.controller('mainController', function ($scope, $http) {
 
     $scope.mostrarTemperaturaCiudad = function () {
         $scope.valor = 1;
+     
         $http({
             method: 'GET',
             params: {codciudad: $scope.codigo},
